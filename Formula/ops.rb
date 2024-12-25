@@ -1,8 +1,8 @@
 class Ops < Formula
     desc "A reliable, low-latency, and anti-censorship virtual private network"
     homepage "https://github.com/zero-rp/ops"
-    url "https://github.com/zero-rp/ops/archive/refs/heads/master.zip"
-    sha256 "fbd7f04f2a7e3912086e0fff7ec0c7af69a5a73c9b43ca5b71a307e9bd58b09e"
+    url "https://github.com/Bepartofyou/homebrew-repo/archive/refs/tags/v0.0.1.tar.gz"
+    sha256 "a48a2b4159627d4eb45c19e26cedcf4a4225bf4431639e964e390dd183ee7990"
     license "MIT"
     head "https://github.com/zero-rp/ops.git"
   
