@@ -15,11 +15,10 @@ class Ops < Formula
     def install
         if build.head?
             system "git", "submodule", "update", "--init", "--recursive"
-            system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-            system "cmake", "--build", "build"
-            system "cmake", "--install", "build"
         end
-        # 其他安装步骤
+        system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+        system "cmake", "--build", "build"
+        system "cmake", "--install", "build"
     end
 
     # service do
