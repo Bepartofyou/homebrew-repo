@@ -1,0 +1,22 @@
+name: macos build
+on:
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - master
+jobs:
+  macos_build:
+    name: build
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-13, macos-latest, macos-15]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: build
+        run: |
+          git submodule update --init --recursive
+          cmake -S . -B build
+          cmake --build build
