@@ -5,16 +5,17 @@ on:
   #   branches:
   #     - master
 jobs:
-  macos build:
+  macos_build:
     name: build
-      strategy:
-        matrix:
+    strategy:
+      fail-fast: false
+      matrix:
         os: [macos-13, macos-latest, macos-15]
-      runs-on: ${{ matrix.os }}
-      steps:
-        - name: checkout
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: checkout
         uses: actions/checkout@v4
-        - name: build
+      - name: build
         run: |
           git submodule update --init --recursive
           cmake -S . -B build
